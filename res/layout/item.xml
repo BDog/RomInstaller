@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/dirLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/dirimage"
+        android:layout_width="24dip"
+        android:layout_height="24dip"
+        android:src="@drawable/icon_folder"
+        android:scaleType="centerCrop"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:layout_marginLeft="10dip"
+        android:layout_gravity="center" />
+    <TextView
+        android:id="@+id/dirtext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_gravity="left|center_vertical"
+        android:textColor="#000000"
+        android:textSize="20dip"
+        android:paddingTop="5dip"
+        android:paddingBottom="5dip"
+        android:layout_marginLeft="15dip"/>
+</LinearLayout>

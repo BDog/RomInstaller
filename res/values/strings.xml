@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Rom Installer</string>
+
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+
+    <string name="btn_install">Install from SD</string>
+    <string name="btn_download">Install from Internet</string>
+    <string name="btn_backup">Backup</string>
+    <string name="btn_restore">Restore</string>
+
+    <string name="sure_to_backup">Ok to make a new backup?</string>
+    <string name="no_backups_found">No backups found..</string>
+    <string name="no_sdcard">No SDCard</string>
+    <string name="sdcard_not_mounted">SDCard not mounted.\n\nPlease mount the SDCard then try again.</string>
+    <string name="locate_zip">Locate Install ZIP</string>
+
+</resources>
