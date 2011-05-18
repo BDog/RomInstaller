@@ -168,6 +168,6 @@ public class RomInstaller extends Activity {
     }
 
     public void preZipInstallation() {
-        // TODO
+        // TODO: dialog
     }
 }
