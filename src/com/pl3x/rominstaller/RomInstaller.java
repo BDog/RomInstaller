@@ -1,13 +1,16 @@
 package com.pl3x.rominstaller;
 
+import com.pl3x.rominstaller.utils.Constants;
 import com.google.ads.AdView;
 import com.google.ads.AdSize;
 import com.google.ads.AdRequest;
-import com.pl3x.rominstaller.utils.Constants;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -72,9 +75,6 @@ public class RomInstaller extends Activity {
                         public void onClick(DialogInterface dialog, int id) {
                             // Create extendedcommand and reboot to recovery to perform backup.
                             Queue queue = new Queue(RomInstaller.this);
-                            queue.addQue("print \\\"\\\"");
-                            queue.addQue("print \\\"" + Constants.VERSION_LINE + "\\\"");
-                            queue.addQue("print \\\"\\\"");
                             queue.addQue("backup_rom " + Constants.BACKUP_DIR + new SimpleDateFormat("yyyy-MM-dd-HH.mm.ss").format(new Date()));
                             queue.writeToCache();
                             queue.rebootRecovery();
@@ -102,9 +102,6 @@ public class RomInstaller extends Activity {
                             public void onClick(DialogInterface dialog, int id) {
                                 // Create extendedcommand and reboot to recovery to perform restore
                                 Queue queue = new Queue(RomInstaller.this);
-                                queue.addQue("print \\\"\\\"");
-                                queue.addQue("print \\\"" + Constants.VERSION_LINE + "\\\"");
-                                queue.addQue("print \\\"\\\"");
                                 queue.addQue("restore_rom " + Constants.BACKUP_DIR + items[id] + " boot system data cache sd-ext");
                                 queue.writeToCache();
                                 queue.rebootRecovery();
@@ -126,6 +123,30 @@ public class RomInstaller extends Activity {
         });
     }
 
+    // Create the Options Menu
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    // Actions for Options Menu items
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.manual_recovery:
+                // TODO
+                break;
+            case R.id.clear_download_cache:
+                // TODO
+                break;
+            case R.id.donate:
+                // TODO
+                break;
+        }
+        return true;
+    }
+
     public void installFromSDCardDialog(String path) {
         if (new File(path).isDirectory()) {
             mCurrentDir = path;
@@ -141,9 +162,12 @@ public class RomInstaller extends Activity {
                 });
             dialog.create().show();
         } else {
-            // start ZIP integrity checks and installation dialogs
+            // TODO: start ZIP integrity checks and installation dialogs
             Toast.makeText(RomInstaller.this, "Installing Rom\n\n\n(coming soon)", Toast.LENGTH_LONG).show();
         }
     }
 
+    public void preZipInstallation() {
+        // TODO
+    }
 }

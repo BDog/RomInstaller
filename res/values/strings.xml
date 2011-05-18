@@ -17,5 +17,9 @@
     <string name="no_sdcard">No SDCard</string>
     <string name="sdcard_not_mounted">SDCard not mounted.\n\nPlease mount the SDCard then try again.</string>
     <string name="locate_zip">Locate Install ZIP</string>
+    <string name="manual_recovery">Manual Recovery</string>
+    <string name="clear_download_cache">Clear Download Cache</string>
+    <string name="donate">Donate</string>
+    <string name="settings">Settings</string>
 
 </resources>

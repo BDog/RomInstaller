@@ -22,9 +22,21 @@ public class Queue {
         queue.remove(s);
     }
 
+    private void organizeQueue() {
+        // TODO: Organize the queue so it doesnt install before formatting partitions (etc)
+        //       Its very important in the order the tasks are performed!
+    }
+
     public void writeToCache() {
+        organizeQueue();
         try {
+            // delete any old cache_file
             Helper.runSuCommand(mContext, "rm " + Constants.CACHE_FILE);
+            // write the version info first
+            Helper.runSuCommand(mContext, "echo \"print \\\"\\\"\" >> " + Constants.CACHE_FILE);
+            Helper.runSuCommand(mContext, "echo \"print \\\"" + Constants.VERSION_LINE + "\\\"\" >> " + Constants.CACHE_FILE);
+            Helper.runSuCommand(mContext, "echo \"print \\\"\\\"\" >> " + Constants.CACHE_FILE);
+            // write the rest of the instructions from queue
             for(int x = 0; x < queue.size(); x++) {
                 Helper.runSuCommand(mContext, "echo \"" + queue.get(x) + "\" >> " + Constants.CACHE_FILE);
             }

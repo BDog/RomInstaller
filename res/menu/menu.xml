@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/manual_recovery"
+        android:title="@string/manual_recovery"
+        android:icon="@drawable/manual_recovery" />
+    <item android:id="@+id/clear_download_cache"
+        android:title="@string/clear_download_cache"
+        android:icon="@drawable/clear_download_cache" />
+    <item android:id="@+id/donate"
+        android:title="@string/donate"
+        android:icon="@drawable/donate" />
+    <item android:id="@+id/settings"
+        android:title="@string/settings"
+        android:icon="@drawable/settings" />
+</menu>
